@@ -20,6 +20,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="hibernate-core-4.3.6.Final" level="project" />
+    <orderEntry type="library" name="hibernate-jpa-2.1-api-1.0.0.Final" level="project" />
   </component>
 </module>
 

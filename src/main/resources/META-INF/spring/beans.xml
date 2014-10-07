@@ -16,7 +16,7 @@
 
 
     <!-- Hibernate 4 SessionFactory Bean definition -->
-    <bean id="hibernate4AnnotatedSessionFactory"
+    <bean id="hibernateSessionFactory"
           class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
         <property name="annotatedClasses">
@@ -34,7 +34,7 @@
     </bean>
 
 
-    <!--<bean id="personDAO" class="com.journaldev.dao.PersonDAOImpl">-->
-        <!--<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />-->
-    <!--</bean>-->
+    <bean id="personDAO" class="phone.book.dao.PersonDaoImpl">
+        <property name="sessionFactory" ref="hibernateSessionFactory" />
+    </bean>
 </beans>
