@@ -17,7 +17,7 @@ public class Person {
 
     private String name;
 
-    @OneToMany(cascade = {CascadeType.REFRESH}, fetch = FetchType.LAZY)
+    @OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
     private List<Phone> phones;
 
     public Person() {
