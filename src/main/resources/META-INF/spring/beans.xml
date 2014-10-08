@@ -6,7 +6,7 @@
         http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 
-    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="org.postgresql.Driver" />
         <property name="url" value="jdbc:postgresql://localhost:5432/test_db" />
         <property name="username" value="postgres" />
@@ -21,7 +21,7 @@
         <property name="annotatedClasses">
             <list>
                 <value>phone.book.model.Person</value>
-                <value>phone.book.model.Phones</value>
+                <value>phone.book.model.Phone</value>
             </list>
         </property>
         <property name="hibernateProperties">

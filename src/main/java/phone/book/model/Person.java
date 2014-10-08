@@ -1,6 +1,7 @@
 package phone.book.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by alexey on 07.10.14.
@@ -17,13 +18,13 @@ public class Person {
     private String name;
 
     @OneToMany(cascade = {CascadeType.REFRESH}, fetch = FetchType.LAZY)
-    private Phones phones;
+    private List<Phone> phones;
 
     public Person() {
         super();
     }
 
-    public Person(String name, Phones phone) {
+    public Person(String name, List<Phone> phone) {
         this.name = name;
         this.phones = phone;
     }
@@ -44,11 +45,11 @@ public class Person {
         this.name = name;
     }
 
-    public Phones getPhones() {
+    public List<Phone> getPhones() {
         return phones;
     }
 
-    public void setPhones(Phones phone) {
+    public void setPhones(List<Phone> phone) {
         this.phones = phone;
     }
 }

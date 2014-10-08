@@ -3,8 +3,9 @@ package phone.book.main;
 import phone.book.dao.PersonDao;
 import phone.book.model.Person;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import phone.book.model.Phones;
+import phone.book.model.Phone;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,11 +14,14 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("META-INF/spring/beans.xml");
 
         PersonDao personDAO = context.getBean(PersonDao.class);
 
-        Person person = new Person("alexey", new Phones("89200868942"));
+        ArrayList<Phone> personArrayList = new ArrayList<Phone>();
+        personArrayList.add(new Phone("89200868942"));
+
+        Person person = new Person("alexey", personArrayList);
 
         personDAO.save(person);
 

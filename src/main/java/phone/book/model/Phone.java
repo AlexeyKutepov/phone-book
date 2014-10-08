@@ -7,7 +7,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "PHONES")
-public class Phones {
+public class Phone {
 
     @Id
     @Column(name="id")
@@ -16,11 +16,11 @@ public class Phones {
 
     private String phoneNumber;
 
-    public Phones() {
+    public Phone() {
         super();
     }
 
-    public Phones(String phoneNumber) {
+    public Phone(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
