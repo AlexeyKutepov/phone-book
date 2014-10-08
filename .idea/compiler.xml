@@ -25,6 +25,9 @@
         <module name="phone-book" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="phone-book" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>
 
