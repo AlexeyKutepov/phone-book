@@ -16,15 +16,16 @@ public class Person {
 
     private String name;
 
-    private String phone;
+    @OneToMany(cascade = {CascadeType.REFRESH}, fetch = FetchType.LAZY)
+    private Phones phones;
 
     public Person() {
         super();
     }
 
-    public Person(String name, String phone) {
+    public Person(String name, Phones phone) {
         this.name = name;
-        this.phone = phone;
+        this.phones = phone;
     }
 
     public Long getId() {
@@ -43,11 +44,11 @@ public class Person {
         this.name = name;
     }
 
-    public String getPhone() {
-        return phone;
+    public Phones getPhones() {
+        return phones;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setPhones(Phones phone) {
+        this.phones = phone;
     }
 }

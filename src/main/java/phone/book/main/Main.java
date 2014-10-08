@@ -3,6 +3,7 @@ package phone.book.main;
 import phone.book.dao.PersonDao;
 import phone.book.model.Person;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import phone.book.model.Phones;
 
 import java.util.List;
 
@@ -16,7 +17,7 @@ public class Main {
 
         PersonDao personDAO = context.getBean(PersonDao.class);
 
-        Person person = new Person("alexey", "89200868942");
+        Person person = new Person("alexey", new Phones("89200868942"));
 
         personDAO.save(person);
 
