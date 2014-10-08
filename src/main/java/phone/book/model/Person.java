@@ -17,7 +17,7 @@ public class Person {
 
     private String name;
 
-    @OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
+    @OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
     private List<Phone> phones;
 
     public Person() {
@@ -51,5 +51,14 @@ public class Person {
 
     public void setPhones(List<Phone> phone) {
         this.phones = phone;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", phones=" + phones +
+                '}';
     }
 }
